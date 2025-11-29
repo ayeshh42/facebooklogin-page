@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - log in or sign up</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">facebook</div>
+            <p class="tagline">Connect with friends and the world around you on Facebook.</p>
+        </div>
+
+        <div class="right-section">
+            <div class="login-box">
+                <input type="text" class="input-field" placeholder="Email or phone number">
+                <input type="password" class="input-field" placeholder="Password">
+                <button class="login-btn">Log In</button>
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div class="divider"></div>
+                <button class="signup-btn" onclick="openModal()">Create new account</button>
+            </div>
+            <div class="create-page">
+                <a href="#"><strong>Create a Page</strong></a> for a celebrity, brand or business.
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+                <h2 class="modal-title">Sign Up</h2>
+                <p class="modal-subtitle">It's quick and easy.</p>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="name-fields">
+                        <input type="text" class="input-field small" placeholder="First name">
+                        <input type="text" class="input-field small" placeholder="Surname">
+                    </div>
+                    <input type="text" class="input-field small" placeholder="Mobile number or email">
+                    <input type="password" class="input-field small" placeholder="New password">
+                    
+                    <label class="birthday-label">Birthday</label>
+                    <div class="birthday-fields">
+                        <select>
+                            <option>Day</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                        <select>
+                            <option>Month</option>
+                            <option>Jan</option>
+                            <option>Feb</option>
+                            <option>Mar</option>
+                        </select>
+                        <select>
+                            <option>Year</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                        </select>
+                    </div>
+
+                    <label class="gender-label">Gender</label>
+                    <div class="gender-options">
+                        <label class="gender-option">
+                            <span>Female</span>
+                            <input type="radio" name="gender">
+                        </label>
+                        <label class="gender-option">
+                            <span>Male</span>
+                            <input type="radio" name="gender">
+                        </label>
+                        <label class="gender-option">
+                            <span>Custom</span>
+                            <input type="radio" name="gender">
+                        </label>
+                    </div>
+
+                    <p class="terms">
+                        People who use our service may have uploaded your contact information to Facebook. <a href="#">Learn more</a>.<br><br>
+                        By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy</a>. You may receive SMS Notifications from us and can opt out any time.
+                    </p>
+
+                    <button type="submit" class="signup-submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('signupModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('signupModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('signupModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
